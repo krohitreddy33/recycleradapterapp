@@ -28,6 +28,11 @@
         android:id="@+id/text22"
         android:textSize="25dp"
         android:textColor="@color/black"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_1"
+            android:text="delete"/>
 
     </LinearLayout>
 

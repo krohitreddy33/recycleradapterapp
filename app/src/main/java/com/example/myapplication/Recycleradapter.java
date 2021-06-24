@@ -39,9 +39,39 @@ public class Recycleradapter extends RecyclerView.Adapter<Recycleradapter.Thisho
 
     @Override
     public void onBindViewHolder(@NonNull  Recycleradapter.Thisholder holder, int position) {
-             uchiha uu= anime.get(position);
+        uchiha uu= anime.get(position);
         holder.txtname.setText(uu.getName());
         holder.txtgender.setText(uu.getGender());
+        builder=new AlertDialog.Builder(context);
+        holder.btndelete1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             /*   builder.setCancelable(false);
+                builder.setMessage("wanna delete,really?");
+                builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    @Override*/
+                  //  public void onClick(DialogInterface dialog, int which) {
+                        anime.remove(position);
+                       // notifyItemRemoved(position);
+                       // notifyItemRangeChanged(position, anime.size());
+                    }
+                });
+                       /* builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        Toast.makeText(context, "no", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                AlertDialog alert= builder.create();
+                alert.setTitle("ARE YOU SURE");
+                alert.show();
+            }
+        });*/
+
+
+
 
 
 
@@ -61,13 +91,14 @@ public class Recycleradapter extends RecyclerView.Adapter<Recycleradapter.Thisho
         public ImageView imageView;
         public TextView txtname;
         public TextView txtgender;
-        public Button btndelete;
+        public Button btndelete1;
 
         public Thisholder(@NonNull  View itemView) {
             super(itemView);
             this.imageView=(ImageView)itemView.findViewById(R.id.img1);
             this.txtname=(TextView)itemView.findViewById(R.id.text11);
             this.txtgender=(TextView)itemView.findViewById(R.id.text22);
+            this.btndelete1=(Button)itemView.findViewById(R.id.delete_1);
 
         }
     }

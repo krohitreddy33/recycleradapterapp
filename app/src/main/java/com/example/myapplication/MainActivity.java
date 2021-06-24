@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 String name = edtname.getText().toString();
                 String gender = edtgender.getText().toString();
                 anime.add(new uchiha(name,gender));
-               
+
+
             }
 
 
